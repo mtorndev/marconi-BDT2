@@ -32,6 +32,7 @@ public class BDTTest {
         //if (Integer.parseInt(JOptionPane.showInputDialog("0=Lettura / 1=Aggiungi")) == 1) {
         em.getTransaction().begin();
 
+  
         Persona persona1 = new Persona();
         Persona persona2 = new Persona();
 
