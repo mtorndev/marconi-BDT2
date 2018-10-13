@@ -1,3 +1,5 @@
 # marconi-BDT1
-Per completare l'installazione bisogna caricare il Plug-in presente nella cartella 
-Provare
+
+Eseguire la clonazione del progetto
+Creare il DB 
+Fare il Run del progetto
