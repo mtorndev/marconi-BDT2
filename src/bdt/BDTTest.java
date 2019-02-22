@@ -4,6 +4,7 @@ package bdt;
 
 import entity.Persona;
 import dao.PersonaDao;
+import dao.DAO;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -19,7 +20,9 @@ public class BDTTest {
    
     public static void main(String[] args) {
         
-        PersonaDao personaDao = new PersonaDao();
+        //PersonaDao personaDao = new PersonaDao();
+        DAO daoModel = new DAO();
+        PersonaDao personaDao = daoModel.getPersonaDao();
         
         Persona persona1 = new Persona();
         Persona persona2 = new Persona();
