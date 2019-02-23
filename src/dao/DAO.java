@@ -14,15 +14,18 @@ public class DAO {
     String PERSISTENCE_UNIT_NAME = "DEFAULT_PU";
     private final EntityManager em;
     private PersonaDao personaDao;
-    
+    private PrestazioneDao prestazioneDao;
     public DAO (){
         em = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME)
                 .createEntityManager();
         personaDao = new PersonaDao(em);
+        prestazioneDao = new PrestazioneDao(em);
     }
 
     public PersonaDao getPersonaDao() {
         return personaDao;
     }
-    
+    public PrestazioneDao getPrestazioneDao() {
+        return prestazioneDao;
+    }
 }
