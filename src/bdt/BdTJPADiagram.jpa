@@ -43,19 +43,11 @@
                 <jpa:xwm/>
                 <jpa:xm/>
             </jpa:basic>
-            <jpa:basic attribute-type="String" v="true" xvt="" name="attribute" id="_15509186201579">
-                <jpa:xwm/>
-                <jpa:xm/>
-            </jpa:basic>
-            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_1522181902567" v="true" xvt="" name="persona" id="_155091862015710">
-                <jpa:xwm/>
-                <jpa:xm/>
-            </jpa:many-to-one>
             <jpa:many-to-one optional="true" primaryKey="true" connected-entity-id="_1510734870901" v="true" xvt="" name="personaRichiedente" id="_155091908321515">
                 <jpa:xwm/>
                 <jpa:xm/>
             </jpa:many-to-one>
-            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_15509186201576">
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" ft="true" id="_15509186201576">
                 <jpa:xwm/>
                 <jpa:xm/>
                 <jpa:generated-value strategy="AUTO"/>

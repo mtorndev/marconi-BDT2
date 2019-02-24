@@ -8,12 +8,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
 import javax.persistence.ManyToOne;
 
 /**
  * @author Marco
  */
 @Entity
+@IdClass(PrestazionePK.class)
 public class Prestazione {
 
     @Id
@@ -26,14 +28,9 @@ public class Prestazione {
     @Basic
     private String Ora;
 
-    @Basic
-    private String attribute;
-
+    @Id
     @ManyToOne(targetEntity = Persona.class)
-    private Persona persona;
-
-    @ManyToOne(targetEntity = Persona.class)
-    private Persona persona1;
+    private Persona personaRichiedente;
 
     public Long getId() {
         return this.id;
@@ -59,28 +56,12 @@ public class Prestazione {
         this.Ora = Ora;
     }
 
-    public String getAttribute() {
-        return this.attribute;
+    public Persona getPersonaRichiedente() {
+        return this.personaRichiedente;
     }
 
-    public void setAttribute(String attribute) {
-        this.attribute = attribute;
-    }
-
-    public Persona getPersona() {
-        return this.persona;
-    }
-
-    public void setPersona(Persona persona) {
-        this.persona = persona;
-    }
-
-    public Persona getPersona1() {
-        return this.persona1;
-    }
-
-    public void setPersona1(Persona persona1) {
-        this.persona1 = persona1;
+    public void setPersonaRichiedente(Persona personaRichiedente) {
+        this.personaRichiedente = personaRichiedente;
     }
 
 }

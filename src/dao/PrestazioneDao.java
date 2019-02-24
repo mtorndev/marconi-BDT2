@@ -28,7 +28,7 @@ public class PrestazioneDao {
         /* 
         https://docs.oracle.com/javaee/6/tutorial/doc/bnbrg.html       
         */
-        TypedQuery<Prestazione> typedQuery = em.createQuery("SELECT u FROM Persona u", Prestazione.class);
+        TypedQuery<Prestazione> typedQuery = em.createQuery("SELECT p FROM Prestazione p", Prestazione.class);
         List<Prestazione> prestazioneList = typedQuery.setMaxResults(10).getResultList();
         return prestazioneList;
     }
