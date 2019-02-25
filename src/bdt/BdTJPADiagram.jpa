@@ -7,6 +7,11 @@
         <jpa:eq e="true">
             <jpa:a>_15107348709172</jpa:a>
         </jpa:eq>
+        <jpa:con am="PUBLIC" e="true">
+            <jpa:a>_15107349054714</jpa:a>
+            <jpa:a>_15119351208914</jpa:a>
+        </jpa:con>
+        <jpa:con am="PUBLIC" e="true"/>
         <jpa:attributes>
             <jpa:basic attribute-type="String" v="true" xvt="" name="cognome" id="_15107349054714">
                 <jpa:xwm/>
@@ -93,8 +98,8 @@
     </jpa:c>
     <jpa:wsl>
         <jpa:ws n="Main" id="_15167799034552">
-            <i ref="_1510734870901" x="195" y="85"/>
-            <i ref="_15509186201575" x="450" y="222"/>
+            <i ref="_1510734870901" x="199" y="85"/>
+            <i ref="_15509186201575" x="449" y="227"/>
         </jpa:ws>
     </jpa:wsl>
 </jpa:entity-mappings>

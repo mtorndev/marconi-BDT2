@@ -28,16 +28,9 @@ public class BDTPerPresTest {
         PrestazioneDao prestazioneDao = daoModel.getPrestazioneDao();
 
         // Creazione Persone
-        Persona persona1 = new Persona();
-        Persona persona2 = new Persona();
-        Persona persona3 = new Persona();
-        persona1.setCognome("Rossi");
-        persona1.setNome("Mario");
-        persona2.setCognome("Verdi");
-        persona2.setNome("Mauro");
-        persona3.setCognome("Bianchi");
-        persona3.setNome("Laura");
-
+        Persona persona1 = new Persona("Rossi", "Mario");
+        Persona persona2 = new Persona("Verdi", "Claudio");
+        Persona persona3 = new Persona("Bianchi", "Laura");
         personaDao.insertPersona(persona1);
         personaDao.insertPersona(persona2);
         personaDao.insertPersona(persona3);
@@ -67,18 +60,18 @@ public class BDTPerPresTest {
         prestazioneDao.insertPrestazione(prestazione3);
         // elenco delle persone     
         List<Persona> personaList = personaDao.findAllQNative();
-        System.out.format("%-30s %-30s\n","Cognome","Nome");
+        System.out.format("%-30s %-30s\n", "Cognome", "Nome");
         for (Persona pe : personaList) {
-            System.out.format("%-30s %-30s\n",pe.getCognome(),pe.getNome());
+            System.out.format("%-30s %-30s\n", pe.getCognome(), pe.getNome());
         }
-        
+
         // elenco delle prestazioni
         List<Prestazione> prestazioneList = prestazioneDao.findAll();
         System.out.println();
-        System.out.format("%-10s %-10s %-30s %-30s\n","Data","Ora","Cognome Richiedente","Cognome Fornitore");
+        System.out.format("%-10s %-10s %-30s %-30s\n", "Data", "Ora", "Cognome Richiedente", "Cognome Fornitore");
         for (Prestazione pr : prestazioneList) {
             System.out.format("%-10s %-10s %-30s %-30s\n",
-                    pr.getData(),pr.getOra(),
+                    pr.getData(), pr.getOra(),
                     pr.getPersonaRichiedente().getCognome(),
                     pr.getPersonaFornitore().getCognome());
         }
@@ -86,13 +79,16 @@ public class BDTPerPresTest {
         Map<Persona, List<Persona>> mapRF = personaDao.findAllRF();
         // Stampa della map
         System.out.println();
-        System.out.format("%-30s %-30s\n","Richiedente","Fornitori");
+        System.out.format("%-30s %-30s\n", "Richiedente", "Fornitori");
         for (Persona rich : mapRF.keySet()) {
             String outR = "";
             String outF = "";
-            outR += rich.getCognome() + ", " + rich.getNome();
+            outR += rich.getCognome() + " " + rich.getNome();
             for (Persona forn : mapRF.get(rich)) {
-                outF += forn.getCognome() + ", " + forn.getNome();
+                if (!outF.isEmpty()) {
+                    outF += " - ";
+                }
+                outF += forn.getCognome() + " " + forn.getNome();
             }
             System.out.format("%-30s %-30s\n", outR, outF);
         }

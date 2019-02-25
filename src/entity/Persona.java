@@ -22,6 +22,14 @@ public class Persona {
     @Basic
     private String nome;
 
+    public Persona(String cognome, String nome) {
+        this.cognome = cognome;
+        this.nome = nome;
+    }
+
+    public Persona() {
+    }
+
     public Long getId() {
         return this.id;
     }
@@ -44,6 +52,28 @@ public class Persona {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (!java.util.Objects.equals(getClass(), obj.getClass())) {
+            return false;
+        }
+        final Persona other = (Persona) obj;
+        if (!java.util.Objects.equals(this.getId(), other.getId())) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 79 * hash + (this.getId() != null ? this.getId().hashCode() : 0);
+        return hash;
     }
 
 }
