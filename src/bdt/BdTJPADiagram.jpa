@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" pkg="entity" v="2.6" rws="_15167799034552" Pws="_15167799034552" cws="_15167799034552" sm="false" xs="false" id="_15107348645991" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
     <jpa:entity lbl-ref="_15107348709172" compositePrimaryKeyClass="PersonaPK" abs="false" class="Persona" v="true" jbn="false" xre="false" m="false" rootElement="_15107348645991" id="_1510734870901">
+        <jpa:hc e="true">
+            <jpa:a>_15107348709172</jpa:a>
+        </jpa:hc>
+        <jpa:eq e="true">
+            <jpa:a>_15107348709172</jpa:a>
+        </jpa:eq>
         <jpa:attributes>
             <jpa:basic attribute-type="String" v="true" xvt="" name="cognome" id="_15107349054714">
                 <jpa:xwm/>
@@ -43,7 +49,11 @@
                 <jpa:xwm/>
                 <jpa:xm/>
             </jpa:basic>
-            <jpa:many-to-one optional="true" primaryKey="true" connected-entity-id="_1510734870901" v="true" xvt="" name="personaRichiedente" id="_155091908321515">
+            <jpa:many-to-one optional="false" primaryKey="true" connected-entity-id="_1510734870901" v="true" xvt="" name="personaRichiedente" id="_155091908321515">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:many-to-one optional="false" primaryKey="true" connected-entity-id="_1510734870901" v="true" xvt="" name="personaFornitore" id="_155108794503555">
                 <jpa:xwm/>
                 <jpa:xm/>
             </jpa:many-to-one>

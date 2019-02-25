@@ -11,12 +11,15 @@ public class PrestazionePK implements Serializable {
 
     private Long personaRichiedente;
 
+    private Long personaFornitore;
+
     public PrestazionePK() {
     }
 
-    public PrestazionePK(Long id, Long personaRichiedente) {
+    public PrestazionePK(Long id, Long personaRichiedente, Long personaFornitore) {
         this.id = id;
         this.personaRichiedente = personaRichiedente;
+        this.personaFornitore = personaFornitore;
     }
 
     public Long getId() {
@@ -35,6 +38,14 @@ public class PrestazionePK implements Serializable {
         this.personaRichiedente = personaRichiedente;
     }
 
+    public Long getPersonaFornitore() {
+        return this.personaFornitore;
+    }
+
+    public void setPersonaFornitore(Long personaFornitore) {
+        this.personaFornitore = personaFornitore;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {
@@ -50,20 +61,24 @@ public class PrestazionePK implements Serializable {
         if (!java.util.Objects.equals(this.getPersonaRichiedente(), other.getPersonaRichiedente())) {
             return false;
         }
+        if (!java.util.Objects.equals(this.getPersonaFornitore(), other.getPersonaFornitore())) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 37 * hash + (this.getId() != null ? this.getId().hashCode() : 0);
-        hash = 37 * hash + (this.getPersonaRichiedente() != null ? this.getPersonaRichiedente().hashCode() : 0);
+        int hash = 7;
+        hash = 29 * hash + (this.getId() != null ? this.getId().hashCode() : 0);
+        hash = 29 * hash + (this.getPersonaRichiedente() != null ? this.getPersonaRichiedente().hashCode() : 0);
+        hash = 29 * hash + (this.getPersonaFornitore() != null ? this.getPersonaFornitore().hashCode() : 0);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "PrestazionePK{" + " id=" + id + ", personaRichiedente=" + personaRichiedente + '}';
+        return "PrestazionePK{" + " id=" + id + ", personaRichiedente=" + personaRichiedente + ", personaFornitore=" + personaFornitore + '}';
     }
 
 }

@@ -29,8 +29,12 @@ public class Prestazione {
     private String Ora;
 
     @Id
-    @ManyToOne(targetEntity = Persona.class)
+    @ManyToOne(optional = false, targetEntity = Persona.class)
     private Persona personaRichiedente;
+
+    @Id
+    @ManyToOne(optional = false, targetEntity = Persona.class)
+    private Persona personaFornitore;
 
     public Long getId() {
         return this.id;
@@ -62,6 +66,14 @@ public class Prestazione {
 
     public void setPersonaRichiedente(Persona personaRichiedente) {
         this.personaRichiedente = personaRichiedente;
+    }
+
+    public Persona getPersonaFornitore() {
+        return this.personaFornitore;
+    }
+
+    public void setPersonaFornitore(Persona personaFornitore) {
+        this.personaFornitore = personaFornitore;
     }
 
 }
