@@ -60,6 +60,7 @@ public class BDTPerPresTest {
         prestazioneDao.insertPrestazione(prestazione3);
         // elenco delle persone     
         List<Persona> personaList = personaDao.findAllQNative();
+        System.out.println("Persone---------------------------");
         System.out.format("%-30s %-30s\n", "Cognome", "Nome");
         for (Persona pe : personaList) {
             System.out.format("%-30s %-30s\n", pe.getCognome(), pe.getNome());
@@ -67,7 +68,7 @@ public class BDTPerPresTest {
 
         // elenco delle prestazioni
         List<Prestazione> prestazioneList = prestazioneDao.findAll();
-        System.out.println();
+        System.out.println("Prestazioni-----------------------");
         System.out.format("%-10s %-10s %-30s %-30s\n", "Data", "Ora", "Cognome Richiedente", "Cognome Fornitore");
         for (Prestazione pr : prestazioneList) {
             System.out.format("%-10s %-10s %-30s %-30s\n",
@@ -78,7 +79,7 @@ public class BDTPerPresTest {
         // elenco delle persone che forniscono prestazione a persone che le ricevono  
         Map<Persona, List<Persona>> mapRF = personaDao.findAllRF();
         // Stampa della map
-        System.out.println();
+        System.out.println("Lista Fornitori per richiedente---");
         System.out.format("%-30s %-30s\n", "Richiedente", "Fornitori");
         for (Persona rich : mapRF.keySet()) {
             String outR = "";

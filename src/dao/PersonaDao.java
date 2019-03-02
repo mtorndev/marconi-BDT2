@@ -75,7 +75,7 @@ public class PersonaDao {
          */
         List<Tuple> lo = em.createQuery(
                 "SELECT r,f FROM Persona r JOIN Prestazione p ON r=p.personaRichiedente JOIN Persona f ON f=p.personaFornitore"
-        ).setMaxResults(10).getResultList();
+        ,Tuple.class).setMaxResults(10).getResultList();
         return lo;
     }
 

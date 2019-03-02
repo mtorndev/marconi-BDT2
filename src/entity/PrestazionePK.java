@@ -69,10 +69,10 @@ public class PrestazionePK implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + (this.getId() != null ? this.getId().hashCode() : 0);
-        hash = 53 * hash + (this.getPersonaRichiedente() != null ? this.getPersonaRichiedente().hashCode() : 0);
-        hash = 53 * hash + (this.getPersonaFornitore() != null ? this.getPersonaFornitore().hashCode() : 0);
+        int hash = 3;
+        hash = 97 * hash + (this.getId() != null ? this.getId().hashCode() : 0);
+        hash = 97 * hash + (this.getPersonaRichiedente() != null ? this.getPersonaRichiedente().hashCode() : 0);
+        hash = 97 * hash + (this.getPersonaFornitore() != null ? this.getPersonaFornitore().hashCode() : 0);
         return hash;
     }
 
